@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.image {
+  margin-left: 35rem;
+  position: absolute;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+#cursor{
+  height: 20px;
+  width: 20px;
+  background-color: white;
+border-radius: 50%;
+filter: blur(20px);
+position:fixed;
+z-index: 19;
+}
+#cursor-blur{
+height: 190px;
+width: 190px;
+background-color: rgba(255, 166, 0, 0.342) ;
+border-radius: 50%;
+position:fixed;
+filter: blur(50px);
+z-index: 19;
+}
+
+nav .collapse {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav .nav-item{
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: 900;
+font-size: 25px;
+margin-right: 1rem;
+margin-top: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  transition: color 0.3s, background-color 0.3s;
+  /* Transition for smooth hover effect */
+  padding: 0 0.5rem 1rem;
+  /* Add padding for better clickable area */
+  border-radius: 1rem;
+  /* Add some rounding to links */
+  position: relative;
+  /* Ensure the pseudo-element is positioned relative to the link */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  top: -1;
+  left: 0;
+  width: 0;
+  bottom: 19px;
+  height: 100%;
+  background-color: rgba(9, 141, 51, 0.651);
+  /* Background color for hover effect */
+  transition: width 0.3s ease-in-out;
+  /* Smooth transition for hover effect */
+  z-index: -1;
+  /* Ensure the hover effect stays behind the text */
+}
+
+.navbar-nav .nav-link:hover::before {
+  width: 100%;
+  /* Expand the background on hover */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+  /* Change text color on hover */
+}
+
+.content {
+  padding: 150px 20px;
+  /* Adds top padding to prevent overlap with navbar */
+  text-align: center;
+}
+
+#navbar {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  height: 90px;
+}
+
+#navbar .btn {
+  background-color: rgba(255, 174, 0, 0.884);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.video-container .video {
+  margin-top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+#main1 {
+  background-color: rgba(0, 0, 0, 0.068);
+  position: relative;
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  top: -1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 20;
+}
+
+#page1 h1 {
+  margin-top: 37rem;
+  font-size: 50px;
+  font-weight: 900;
+  color: rgb(224, 146, 43);
+}
+
+#page1 h1::before {
+  content: "Unsung Heroe's of India's freedom struggle";
+  position: absolute;
+  color: black;
+  margin-top: 0px;
+  margin-left: -2px;
+  -webkit-text-stroke: 1px rgb(13, 16, 197);
+  z-index: -1;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+  #page1 h1{
+    font-size: 40px;
+  }
+  #cards-container{
+    height: 1vh
+  }
+}
+
+@media screen and (max-width:767px){
+  #page1 h1{
+    font-size: 35px;
+  }
+  #page1 h1::before {
+    display: none;
+  }
+}
+
+
+#page1 h4 {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+#page2{
+  min-height:100vh;
+  width: 100%;
+  z-index: 19;
+}
+#page2 h4{
+  margin-top: 20rem;
+}
+
+#scroller{
+overflow-x: auto;
+overflow-y: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 19;
+}
+#scroller::-webkit-scrollbar{
+display: none;
+}
+#scroller-in{
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+#scroller h4{
+  display: inline-block;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-right: 10px;
+  color: transparent;
+  transition: all linear 0.5s;
+  -webkit-text-stroke: 2px orange;
+}
+#scroller h4:hover {
+  color: rgba(3, 253, 3, 0.493);
+}
+
+@keyframes scroll{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+/* ----------------cards page-2-------------- */
+
+#cards-container{
+  
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 20;
+}
+
+.cards{
+  height: 80%;
+  width: 24%;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  transition: all ease 0.6s;
+}
+
+
+
+#card1{
+  background-image: url(/Assests/Mahatma-Gandhi\,_studio\,_1931.jpg) ;
+  background-size: contain;  
+background-repeat: no-repeat;
+}
+
+#card1 p{
+  padding-left: 20px;
+}
+
+#card2{
+  background-image:url(/Assests/Hasrat_Mohani_2014_stamp_of_India.jpg);
+  background-size: contain;  
+background-repeat: no-repeat;
+justify-content: center;
+}
+#card2 p{
+  padding-left: 30px;
+}
+#card3{
+  background-image:url(/Assests/Seal_of_the_Constituent_Assembly_of_India.svg.png) ;
+  background-color: rgba(255, 255, 255, 0.808);
+background-size: contain;  
+background-repeat: no-repeat;
+text-align: center;
+}
+
+.overlay{
+  width: 100%;
+  height:101%;
+  background-color: rgb(255, 183, 0);
+  backdrop-filter: blur(5px);
+  position:static;
+  color: rgb(0, 0, 0);
+  display:flex;
+flex-wrap:wrap;
+flex-direction: column;
+justify-content: center;
+opacity: 0;
+transition: all ease 0.6s;
+}
+.cards:hover .overlay{
+  opacity: 1;
+}
+.cards:hover{
+  transform: rotate3d(1,-1,0,16deg);
+}
+
+.overlay h4{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 900;
+  margin-left: 20px; 
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.overlay p{
+  margin-left: -280px;
+  width: 250px;
+  height: 250px;
+font-weight: 600;
+}
+
+/* ---------------page3----------- */
+
+#page3{
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 19;
+}
+
+#page3>p{
+  /* margin-top: -10rem; */
+font-size: 25px;
+font-weight: 700;
+width: 60%;
+color: white;
+line-height: 50px;
+text-align: center;
+z-index: 19;
+}
+
+#page3 img{
+  position: absolute;
+height: 80px;
+}
+
+#page3 #colon1{
+  left: 14%;
+  top: 62%;
+}
+
+#page3 #colon2{
+  bottom: 28%;
+  right: 19%;
+}
+
+#page4{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#video{
+  filter: saturate(2);
+}
+
+#video video{
+width: 480px;
+height: 480px;
+margin-top: -12rem;
+border-radius: 60%;
+filter: blur(69px);
+}
+
+#video svg{
+  position: absolute;
+  height: 150%;
+  margin-top: -10rem;
+  margin-left: -27rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#page6{
+  height: 50vh;
+  width: 100%;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 18;
+}
+
+footer{
+  background-color: black;
+}
+.footerContainer{
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+.socialIcons{
+  display: flex;
+  justify-content: center;
+}
+.socialIcons a{
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+.socialIcons a i{
+  font-size: 2rem;
+  color: rgb(197, 118, 15);
+  opacity: 0.9;
+}
+
+.socialIcons a:hover{
+  background-color: rgb(2, 7, 78);
+  transition: 0.5s;
+}
+
+.socialIcons a:hover i{
+  color: white;
+  transition: 0.5s;
+}
+
+.footerNav{
+  margin:30px 0;
+}
+
+.footerNav ul{
+  display: flex;
+}
+.footerNav ul li a{
+  color: white;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.footerNav ul li a:hover{
+  opacity: 1;
+}
+.footerBottom{
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+.footerBottom p{
+  color: white;
+}
+.designer{
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+
